@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: If you use PashtoBench, please cite it as below.
+title: "PashtoBench: a capability and safety benchmark for Pashto"
+abstract: >-
+  A unified capability and safety benchmark for Pashto, built from original
+  native-authored items with matched English anchors. It covers translation,
+  factual QA, instruction following and refusal consistency, and includes the
+  first refusal-consistency evaluation of chat models in Pashto.
+type: dataset
+authors:
+  - family-names: Noori
+    given-names: Jawad
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/Jawadnoori1718/PashtoBench"
+keywords:
+  - Pashto
+  - benchmark
+  - evaluation
+  - safety
+  - low-resource languages
+  - multilingual
