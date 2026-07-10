@@ -23,7 +23,7 @@ Four tasks, about 165 original items, run against six models at temperature 0 wi
 
 ## Roadmap
 
-- [ ] Sprint 0: foundation (scaffold, charter, CI, methodology)
+- [x] Sprint 0: foundation (scaffold, charter, CI, methodology)
 - [ ] Sprint 1: data engine and translation set
 - [ ] Sprint 2: harness and first pilot results
 - [ ] Sprint 3: factual QA
