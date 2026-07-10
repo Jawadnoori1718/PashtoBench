@@ -15,7 +15,7 @@ test:
 	pytest
 
 validate:
-	@echo "item validator arrives in sprint 1"
+	pashtobench validate data
 
 run:
 	pashtobench --help

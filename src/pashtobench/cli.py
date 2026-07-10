@@ -1,11 +1,12 @@
-"""Command line entry point. I grow this into the full runner in sprint 2."""
+"""Command line entry point. I grow the run command into the full runner in sprint 2."""
 
 import argparse
 
 from pashtobench import __version__
+from pashtobench.validate import add_validate_parser
 
 
-def main(argv: list[str] | None = None) -> None:
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="pashtobench",
         description="A capability and safety benchmark for Pashto.",
@@ -15,9 +16,18 @@ def main(argv: list[str] | None = None) -> None:
         action="version",
         version=f"pashtobench {__version__}",
     )
-    parser.parse_args(argv)
-    # nothing to run yet, so I just show the help for now
-    parser.print_help()
+    sub = parser.add_subparsers(dest="command")
+    add_validate_parser(sub)
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int | None:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if not getattr(args, "command", None):
+        parser.print_help()
+        return None
+    return args.func(args)
 
 
 if __name__ == "__main__":
