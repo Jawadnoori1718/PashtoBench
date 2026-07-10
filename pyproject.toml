@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pashtobench"
+version = "0.1.0"
+description = "A capability and safety benchmark for Pashto"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Jawad Noori" }]
+keywords = ["pashto", "benchmark", "evaluation", "safety", "multilingual"]
+dependencies = [
+    "pydantic>=2.6",
+    "httpx>=0.27",
+    "tenacity>=8.2",
+    "sacrebleu>=2.4",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.5",
+    "pytest>=8.0",
+    "pre-commit>=3.7",
+]
+
+[project.scripts]
+pashtobench = "pashtobench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
