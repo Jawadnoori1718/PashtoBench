@@ -1,5 +1,7 @@
 # PashtoBench
 
+[![CI](https://github.com/Jawadnoori1718/PashtoBench/actions/workflows/ci.yml/badge.svg)](https://github.com/Jawadnoori1718/PashtoBench/actions/workflows/ci.yml)
+
 A capability and safety benchmark for Pashto.
 
 > PashtoBench is the first unified capability and safety benchmark for Pashto, built from original native-authored items, evaluating how well frontier AI models serve a language of 40+ million speakers.
@@ -8,7 +10,7 @@ A capability and safety benchmark for Pashto.
 
 ## Why
 
-More than 40 million people speak Pashto, yet there is no unified picture of how well frontier AI models serve the language. Public translation sets carry contamination risk, the one reading comprehension benchmark that covers Pashto uses translated items, and no safety or refusal consistency evaluation exists for the language at all. PashtoBench fills that gap with original items written by a native speaker and independently verified, each paired with a matched English anchor so every headline number is a delta rather than an absolute.
+More than 40 million people speak Pashto, yet there is no unified picture of how well frontier AI models serve the language. Public translation sets carry contamination risk, the one reading comprehension benchmark that covers Pashto uses translated items, and no one has measured how chat models refuse or comply in Pashto at all. PashtoBench fills that gap with original items written by a native speaker and independently verified, each paired with a matched English anchor so every headline number is a delta rather than an absolute.
 
 ## What will PashtoBench contain
 
