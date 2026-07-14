@@ -3,7 +3,21 @@
 import argparse
 
 from pashtobench import __version__
+from pashtobench.clients import list_specs
 from pashtobench.validate import add_validate_parser
+
+
+def _run_models(args) -> None:
+    for spec in list_specs():
+        print(
+            f"{spec.name:8} {spec.provider:10} {spec.model_id:38} "
+            f"in ${spec.price.input_per_m}/M  out ${spec.price.output_per_m}/M"
+        )
+
+
+def add_models_parser(sub) -> None:
+    parser = sub.add_parser("models", help="list the configured benchmark models")
+    parser.set_defaults(func=_run_models)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -18,6 +32,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     sub = parser.add_subparsers(dest="command")
     add_validate_parser(sub)
+    add_models_parser(sub)
     return parser
 
 
