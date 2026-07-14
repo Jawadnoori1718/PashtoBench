@@ -18,7 +18,7 @@ validate:
 	pashtobench validate data
 
 run:
-	pashtobench --help
+	pashtobench run --task translation --models claude,gpt
 
 leaderboard:
 	@echo "leaderboard arrives in sprint 2"

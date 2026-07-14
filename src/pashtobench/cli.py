@@ -4,6 +4,7 @@ import argparse
 
 from pashtobench import __version__
 from pashtobench.clients import list_specs
+from pashtobench.runner import add_run_parser
 from pashtobench.validate import add_validate_parser
 
 
@@ -33,6 +34,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command")
     add_validate_parser(sub)
     add_models_parser(sub)
+    add_run_parser(sub)
     return parser
 
 
