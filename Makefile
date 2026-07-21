@@ -21,4 +21,5 @@ run:
 	pashtobench run --task translation --models claude,gpt
 
 leaderboard:
-	@echo "leaderboard arrives in sprint 2"
+	pashtobench score --task translation
+	pashtobench leaderboard
